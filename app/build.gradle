@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.clean.selfiestick'
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId 'com.clean.selfiestick'
+        // VpnService and the foreground service need API 24+ here
+        minSdk = 24
+        // Deliberately low: avoids the newer foreground-service-type and background-start restrictions
+        // for a sideloaded, personal-use app. Raise it if the newer rules ever need to be met.
+        targetSdk = 28
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    // The SDK dependency block is embedded in the APK by default, and generating it is what crashed the
+    // release build on this device. Nothing here needs it, so leave it out.
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
+    // Not published to Google Play, so the Play target-SDK rule is not checked (targetSdk stays 28 on purpose).
+    lint {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+// Belt and braces: the dependency-data task is not needed for this app, and it is the one that crashed.
+tasks.configureEach { task ->
+    if (task.name.endsWith('DependencyData') || task.name.startsWith('lintVital')) {
+        task.enabled = false
+    }
+}
