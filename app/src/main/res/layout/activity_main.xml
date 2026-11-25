@@ -213,6 +213,78 @@
                 android:textColor="#E5E7EB"
                 android:textSize="14sp" />
 
+                        <Switch
+                android:id="@+id/localhost_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Connect via localhost (no VPN)"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/wide_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Wide VPN fallback"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/secure_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Write secure settings (grant over adb, turn adb on)"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/adb_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Turn on adb at run start"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/wifi_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Turn on wireless adb at run start"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/a11y_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                android:text="Auto-enable early-start accessibility"
+                android:textColor="#E5E7EB"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/secure_state_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                android:paddingBottom="8dp"
+                android:textColor="#8B93A1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/early_start_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                android:paddingBottom="8dp"
+                android:textColor="#8B93A1"
+                android:textSize="12sp" />
+
             <Switch
                 android:id="@+id/debug_switch"
                 android:layout_width="match_parent"

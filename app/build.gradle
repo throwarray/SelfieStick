@@ -13,13 +13,14 @@ android {
         // Deliberately low: avoids the newer foreground-service-type and background-start restrictions
         // for a sideloaded, personal-use app. Raise it if the newer rules ever need to be met.
         targetSdk = 28
-        versionCode 1
-        versionName '1.0'
+        versionCode 2
+        versionName '1.0.1'
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.debug
         }
     }
 

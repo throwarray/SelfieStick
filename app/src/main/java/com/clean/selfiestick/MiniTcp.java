@@ -17,7 +17,7 @@ import java.util.Random;
  * Deliberately simple: stop-and-wait sending, in-order-only receiving (anything out of
  * order gets a duplicate ACK and adbd retransmits). Plenty for an adb control channel.
  */
-public class MiniTcp {
+public class MiniTcp implements AdbTransport {
     static final String TRACE = "SelfieStick";
     /** Set per run from the Debug log switch. */
     static volatile boolean trace;

@@ -12,7 +12,7 @@ public class AdbClient {
             OKAY = 0x59414b4f, CLSE = 0x45534c43, WRTE = 0x45545257;
     static final int VERSION = 0x01000000, MAXDATA = 256 * 1024;
 
-    final MiniTcp tcp;
+    final AdbTransport tcp;
     int nextLocalId = 1;
     /** adbd's max payload from its CNXN reply (arg1); 0 until connected. */
     int remoteMaxData;
@@ -20,7 +20,7 @@ public class AdbClient {
     int mCmd, mA0, mA1;
     byte[] mData;
 
-    public AdbClient(MiniTcp tcp) { this.tcp = tcp; }
+    public AdbClient(AdbTransport tcp) { this.tcp = tcp; }
 
     void send(int cmd, int a0, int a1, byte[] data) throws IOException {
         int len = data == null ? 0 : data.length;

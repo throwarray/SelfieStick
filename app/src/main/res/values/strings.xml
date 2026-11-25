@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SelfieStick</string>
+    <string name="early_start_description">Starts SelfieStick early at boot. It does not read or act on the screen.</string>
 </resources>
